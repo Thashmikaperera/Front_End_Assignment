@@ -2,9 +2,259 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Front End Pos System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <title>Authentication</title>
 </head>
 <body>
 
+<!-- Sign In Page -->
+<main id="login_page">
+    <div class="img">
+    <div class="auth-container" id="signin-container">
+        <h2>Sign In</h2>
+        <form>
+            <div class="form-group">
+                <label for="name1">Username:</label>
+                <input type="text" class="form-control" id="name1" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password">
+            </div>
+            <div class="mb-2 col-7 form-check text-start align-items-start justify-content-start">
+                <input type="checkbox" class="form-check-input" id="check">
+                <label class="form-check-label" for="check">Show password</label>
+            </div>
+            <button type="submit" id="signInBtn" class="btn btn-primary">Sign In</button>
+        </form>
+        <p class="mt-3">Don't have an account? <a href="#" id="signUp" >Sign Up</a></p>
+    </div>
+    </div>
+</main>
+
+<!-- Sign Up Page -->
+<main id="sign_up_page">
+    <div class="img">
+    <div class="auth-container" id="signup-container" >
+        <h2>Sign Up</h2>
+        <form>```
+            <div class="form-group">
+                <label for="name2">Username:</label>
+                <input type="text" class="form-control" id="name2" placeholder="Choose a username">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="password2">Password:</label>
+                <input type="password" class="form-control" id="password2" placeholder="Choose a password">
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">
+            </div>
+            <button type="submit" id="signUpBtn" class="btn btn-success">Sign Up</button>
+        </form>
+        <p class="mt-3">Already have an account? <a href="#">Sign In</a></p>
+    </div>
+    </div>
+
+</main>
+
+<main id="dashboard_page">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">POS-System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a id="home" class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="customer" class="nav-link" aria-current="page" href="#">Customer</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="item" class="nav-link" aria-current="page" href="#">Item</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="order_page" class="nav-link" aria-current="page" href="#">Order</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="orderDetails_page" class="nav-link" aria-current="page" href="#">OrderDetails</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+</main>
+<main id="home_page">
+    <h1>home</h1>
+</main>
+<main id="customer_form">
+    <div class="container-fluid">
+
+        <div class="container customer-card card col-12 mt-5">
+            <div class="card-body">
+                <div class="container row">
+                    <h1 class="col-9">Customer Details</h1>
+                    <button id="addBtn" type="button" class="btn add-new-customerBtn btn-success  col-2 ms-4 h-25 mt-3 align-items-end justify-content-end" data-bs-toggle="modal" data-bs-target="#customerModal"><i class="fa-solid fa-plus"></i>
+                        Add Customer
+                    </button>
+                </div>
+
+                <table class="table table-hover mt-3">
+                    <thead>
+                    <tr>
+                        <th class="bg-dark text-light" scope="col">ID</th>
+                        <th class="bg-dark text-light" scope="col">Customer Name</th>
+                        <th class="bg-dark text-light" scope="col">Address</th>
+                        <th class="bg-dark text-light" scope="col">Contact</th>
+                        <th class="bg-dark text-light" scope="col">Email</th>
+                    </tr>
+                    </thead>
+                    <tbody id="customer-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="addCustomerModelLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="customerFormHeading">Add New Customer</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="customerId" class="form-label">Customer ID :</label>
+                            <input type="text" class="form-control" id="customerId">
+                        </div>
+                        <div class="mb-3">
+                            <label for="customerName" class="form-label">Customer Name :</label>
+                            <input type="text" class="form-control" id="customerName">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="customerAddress">Customer Address :</label>
+                            <input type="text" class="form-control" id="customerAddress">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="customerContact">Customer Contact :</label>
+                            <input type="text" class="form-control" id="customerContact">
+                        </div>
+                        <div class="mb-3">
+                            <label for="customerEmail" class="form-label">Customer Email :</label>
+                            <input type="email" class="form-control" id="customerEmail">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Customer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<main id="item_form">
+    <div class="container-fluid">
+
+        <div class="container customer-card card col-12 mt-5">
+            <div class="card-body">
+                <div class="container row">
+                    <h1 class="col-9">Item Details</h1>
+                    <button id="addBtn2" type="button" class="btn add-new-customerBtn btn-success  col-2 ms-4 h-25 mt-3 align-items-end justify-content-end" data-bs-toggle="modal" data-bs-target="#itemModal"><i class="fa-solid fa-plus"></i>
+                        Add Item
+                    </button>
+                </div>
+
+                <table class="table table-hover mt-3">
+                    <thead>
+                    <tr>
+                        <th class="bg-dark text-light" scope="col">Code</th>
+                        <th class="bg-dark text-light" scope="col">Description</th>
+                        <th class="bg-dark text-light" scope="col">Qty</th>
+                        <th class="bg-dark text-light" scope="col">Price</th>
+                    </tr>
+                    </thead>
+                    <tbody id="item-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="itemModal" tabindex="-1" role="dialog" aria-labelledby="addCustomerModelLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="itemFormHeading">Add New Item</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="itemCode" class="form-label">Item Code :</label>
+                            <input type="text" class="form-control" id="itemCode">
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemDescription" class="form-label">Item Description :</label>
+                            <input type="text" class="form-control" id="itemDescription">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="qty">Qty</label>
+                            <input type="text" class="form-control" id="qty">
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Price :</label>
+                            <input type="text" class="form-control" id="price">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="assets/script/script.js"></script>
+<script src="controller/user.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!--<script>-->
+<!--    function toggleAuthContainer(activeContainer) {-->
+<!--        document.getElementById('signin-container').style.display = activeContainer === 'signin-container' ? 'block' : 'none';-->
+<!--        document.getElementById('signup-container').style.display = activeContainer === 'signup-container' ? 'block' : 'none';-->
+<!--    }-->
+<!--</script>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
