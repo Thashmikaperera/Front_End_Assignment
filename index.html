@@ -126,8 +126,7 @@
                     <tr>
                         <th class="bg-dark text-light" scope="col">ID</th>
                         <th class="bg-dark text-light" scope="col">Customer Name</th>
-                        <th class="bg-dark text-light" scope="col">Address</th>
-                        <th class="bg-dark text-light" scope="col">Contact</th>
+                        <th class="bg-dark text-light" scope="col">City</th>
                         <th class="bg-dark text-light" scope="col">Email</th>
                     </tr>
                     </thead>
@@ -147,30 +146,26 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="customerId" class="form-label">Customer ID :</label>
-                            <input type="text" class="form-control" id="customerId">
+                            <label for="customer_id" class="form-label">Customer ID :</label>
+                            <input type="text" class="form-control" id="customer_id">
                         </div>
                         <div class="mb-3">
                             <label for="customerName" class="form-label">Customer Name :</label>
                             <input type="text" class="form-control" id="customerName">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="customerAddress">Customer Address :</label>
-                            <input type="text" class="form-control" id="customerAddress">
+                            <label class="form-label" for="city">Customer City :</label>
+                            <input type="text" class="form-control" id="city">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="customerContact">Customer Contact :</label>
-                            <input type="text" class="form-control" id="customerContact">
-                        </div>
-                        <div class="mb-3">
-                            <label for="customerEmail" class="form-label">Customer Email :</label>
+                            <label for="email" class="form-label">Customer Email :</label>
                             <input type="email" class="form-control" id="customerEmail">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save Customer</button>
+                    <button type="button" class="btn btn-primary" id="saveUpdateBtn">Save Customer</button>
                 </div>
             </div>
         </div>
