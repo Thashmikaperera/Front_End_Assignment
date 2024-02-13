@@ -1,37 +1,38 @@
-.img{
-    background-image:url("../img/ss.png");
-    background-size: cover;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.auth-container {
-    background-color: rgba(158, 216, 210, 0.9);
-    padding: 25px;
-    border-radius: 10px;
-    text-align: center;
-    width: 320px;
-}
-.form-group {
-    text-align: left;
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: inline-block;
-    margin-bottom: 5px;
-}
-
-.form-group input {
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    background-color: lightgray;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire container */
 }
 
-body    {
-    background-color: paleturquoise;
+.card-box{
+    margin-top: 260px!important;
+    background: linear-gradient(to top right, #dfdee0 0%, #fcfbfd 100%);
 }
+
+@media all and (max-width: 980px){
+    .card{
+        width: 60% !important;
+    }
+}
+
+@media all and (max-width: 392px){
+    .card{
+        width: 90% !important;
+    }
+}
+
+#sign_up_page{
+    display: none;
+}
+
+.add-new-customerBtn{
+    width: 180px;
+}
+
+.add-new-ItemBtn{
+    width: 180px;
+}
+
